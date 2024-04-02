@@ -9,7 +9,7 @@ stages:
       displayName: Install Newmann
       continueOnError: true
       inputs:
-        script: 'npm install newman'
+        script: 'npm install -g newman'
         workingDirectory: $(System.DefaultWorkingDirectory)
     - task: CmdLine@2
       displayName: Run Regression Tests
