@@ -3,18 +3,17 @@ stages:
 - stage: Build
   jobs:
   - job: Build
-    pool:
-      name: Hosted Ubuntu 1604
+    pool: myModule3AP
     steps:
     - task: CmdLine@2
-      displayName: DISPLAY NAME
+      displayName: Install Newmann
       continueOnError: true
       inputs:
-        script: 'COMMAND StarterAPIs.json'
+        script: 'sudo npm install -g newman'
         workingDirectory: 'starter-code/automatedtesting/postman'
     - task: CmdLine@2
-      displayName: DISPLAY NAME
+      displayName: Run Regression Tests
       inputs:
-        script: 'COMMAND'
-        workingDirectory: DEFAULT WORKING DIRECTORY
+        script: 'newman run StarterAPIs.json'
+        workingDirectory: starter-code/automatedtesting/postman
     
