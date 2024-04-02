@@ -3,7 +3,7 @@ stages:
 - stage: Build
   jobs:
   - job: Build
-    pool: Azure Pipelines
+    pool: my-test-pool
     steps:
     - task: CmdLine@2
       displayName: Install Newmann
